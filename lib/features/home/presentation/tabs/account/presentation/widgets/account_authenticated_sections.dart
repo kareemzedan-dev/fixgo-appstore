@@ -46,21 +46,21 @@ class AccountProfileSettingsSection extends StatelessWidget {
           icon: AssetsManager.settings1,
           onTap: onEditProfileTap,
         ),
-        if (isServiceProvider) ...[
-          SettingsItem(
-            title: l10n.verificationMenuTitle,
-            subtitle: l10n.verificationMenuSubtitle,
-            icon: AssetsManager.settings8,
-            showVerificationBadge: true,
-            onTap: onVerificationTap,
-          ),
-          SettingsItem(
-            title: l10n.upgradeAccount,
-            icon: AssetsManager.settings2,
-            subtitle: l10n.upgradeAccountSubtitle,
-            onTap: onUpgradeTap,
-          ),
-        ],
+        // if (isServiceProvider) ...[
+        //   SettingsItem(
+        //     title: l10n.verificationMenuTitle,
+        //     subtitle: l10n.verificationMenuSubtitle,
+        //     icon: AssetsManager.settings8,
+        //     showVerificationBadge: true,
+        //     onTap: onVerificationTap,
+        //   ),
+        //   SettingsItem(
+        //     title: l10n.upgradeAccount,
+        //     icon: AssetsManager.settings2,
+        //     subtitle: l10n.upgradeAccountSubtitle,
+        //     onTap: onUpgradeTap,
+        //   ),
+        // ],
         if (!isServiceProvider)
           SettingsItem(
             title: l10n.createProviderAccount,

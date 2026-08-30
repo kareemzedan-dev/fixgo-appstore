@@ -25,8 +25,8 @@ class ProviderProfileCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(6),
             child: Container(
-              width: 180,
-              height: 180,
+              width: 150,
+              height: 150,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.grey.shade200,

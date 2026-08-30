@@ -47,7 +47,8 @@ Future<void> main() async {
   }
   await FirebaseAppCheck.instance.activate(
     androidProvider: AndroidProvider.debug,
-
+    // providerAndroid: ,
+    // providerApple: AppleDeviceCheckProvider(),
     appleProvider: AppleProvider.appAttest,
   );
   configureDependencies();

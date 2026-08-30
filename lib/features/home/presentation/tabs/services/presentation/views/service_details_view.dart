@@ -80,14 +80,12 @@ class ServiceDetailsView extends StatelessWidget {
                             SizedBox(height: AppSizes.h(20)),
 
                             /// BOOST BUTTON (Owner only)
-                            if (isOwner)
-                              Padding(
-                                padding: EdgeInsets.all(AppSizes.p16),
-                                child: ServiceDetailsBoostButton(offer: offer),
-                              ),
-
-                            SizedBox(height: AppSizes.h(16)),
-
+                            // if (isOwner)
+                            //   Padding(
+                            //     padding: EdgeInsets.all(AppSizes.p16),
+                            //     child: ServiceDetailsBoostButton(offer: offer),
+                            //   ),
+                            // SizedBox(height: AppSizes.h(16)),
                             Padding(
                               padding: EdgeInsets.symmetric(
                                 horizontal: AppSizes.p20,

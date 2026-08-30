@@ -7,9 +7,7 @@ Future<void> sendNotification({
   required String body,
   String? chatId,
 }) async {
-  final url = Uri.parse(
-    "https://us-central1-mkawlak.cloudfunctions.net/sendNotification",
-  );
+  final url = Uri.parse("https://sendnotification-ggdgneamuq-uc.a.run.app");
 
   await http.post(
     url,

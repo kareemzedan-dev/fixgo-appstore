@@ -66,10 +66,10 @@
 
 /// صلاحيات الموقع
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>نحتاج الوصول إلى موقعك لتحديد عنوانك الحالي</string>
+	<string>نحتاج الوصول إلى موقعك لتحديد عنوانك الحالي للوصول لأقرب مقدمي الخدمات لك</string>
 
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>نحتاج الوصول إلى موقعك لتحديد عنوانك الحالي</string>
+	<string>نحتاج الوصول إلى موقعك لتحديد عنوانك الحالي للوصول لأقرب مقدمي الخدمات لك</string>
 
 
 	<key>UISupportedInterfaceOrientations</key>
