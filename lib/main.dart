@@ -116,10 +116,13 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+  bool _isIosGuardReady = false;
+
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
 
     if (!kIsWeb) {
       FirebaseMessaging.onMessage.listen((message) {
@@ -133,6 +136,40 @@ class _MyAppState extends State<MyApp> {
           AppRouter.router.push("/chat-details", extra: otherUserId);
         }
       });
+    }
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (defaultTargetPlatform != TargetPlatform.iOS) return;
+
+    if (state == AppLifecycleState.resumed) {
+      _refreshIosLifecycleGuard();
+    }
+
+    if (state == AppLifecycleState.paused ||
+        state == AppLifecycleState.detached) {
+      _isIosGuardReady = false;
+    }
+  }
+
+  Future<void> _refreshIosLifecycleGuard() async {
+    if (_isIosGuardReady) return;
+
+    try {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+      await FirebaseMessaging.instance.requestPermission();
+      _isIosGuardReady = true;
+    } catch (error) {
+      debugPrint('iOS lifecycle guard failed: $error');
     }
   }
 
