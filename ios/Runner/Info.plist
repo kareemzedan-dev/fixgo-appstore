@@ -64,7 +64,7 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 
-/// صلاحيات الموقع
+<!-- صلاحيات الموقع -->
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>نحتاج الوصول إلى موقعك لتحديد عنوانك الحالي للوصول لأقرب مقدمي الخدمات لك</string>
 
